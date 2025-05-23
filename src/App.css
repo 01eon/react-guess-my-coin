@@ -1,0 +1,9 @@
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5rem;
+  height: 100vh;
+  overflow-y: hidden;
+}

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router'
-import GameContainer from './components/game-container/game-container.component'
+import GameContainer from './routes/game-container/game-container.component'
 import './App.css'
 
 const App = () => {
