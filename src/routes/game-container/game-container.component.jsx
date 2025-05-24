@@ -10,6 +10,7 @@ import StreakIndicator from "../../components/streak-indicator/streak-indicator.
 import CoinSelect from "../../components/coin-select/coin-select.component";
 import Results from "../../components/results/results.component";
 import StatusCard from "../../components/status-card/status-card.component";
+import { ButtonSecondary } from "../../components/button/button.styled";
 
 const GameContainer = () => {
   return ( 
@@ -30,6 +31,8 @@ const GameContainer = () => {
         <Results />
 
         <StatusCard />
+
+        <ButtonSecondary id="btnReset">🔄 Reset Game</ButtonSecondary>
       </GameContain>
     </Fragment>
   );
