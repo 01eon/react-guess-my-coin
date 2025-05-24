@@ -8,19 +8,25 @@ import {
 import CoinDisplay from "../../components/coin-display/coin-display.component";
 import StreakIndicator from "../../components/streak-indicator/streak-indicator.component";
 import CoinSelect from "../../components/coin-select/coin-select.component";
+import Results from "../../components/results/results.component";
 
 const GameContainer = () => {
   return (
     <Fragment>
       <GameContain>
+        
         <GameHeader>
           <GameTitle>Guess My Coin</GameTitle>
           <GameDesc>Test your luck and intuition!</GameDesc>
         </GameHeader>
+
         <CoinDisplay />
-        <StreakIndicator/>
+
+        <StreakIndicator />
+
         <CoinSelect />
-        
+
+        <Results />
       </GameContain>
     </Fragment>
   );

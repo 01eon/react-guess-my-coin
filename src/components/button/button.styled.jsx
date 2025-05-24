@@ -13,8 +13,8 @@ const ButtonBase = styled.button`
   overflow: hidden;
 
   &:active {
-            transform: translateY(0);
-        }
+    transform: translateY(0);
+  }
 `;
 
 export const ButtonPrimary = styled(ButtonBase)`
