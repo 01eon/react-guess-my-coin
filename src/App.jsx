@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router'
-import GameContainer from './routes/game-container/game-container.component'
+
 import './App.css'
+import GameContainer from './routes/game-container/game-container.component'
 
 const App = () => {
 
   return (
     <Routes>
-      <Route path='/' element={<GameContainer />} />
+      <Route path='/' element={<GameContainer/>} />
     </Routes>
   )
 }
