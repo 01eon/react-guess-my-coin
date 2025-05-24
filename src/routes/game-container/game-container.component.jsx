@@ -9,9 +9,10 @@ import CoinDisplay from "../../components/coin-display/coin-display.component";
 import StreakIndicator from "../../components/streak-indicator/streak-indicator.component";
 import CoinSelect from "../../components/coin-select/coin-select.component";
 import Results from "../../components/results/results.component";
+import StatusCard from "../../components/status-card/status-card.component";
 
 const GameContainer = () => {
-  return (
+  return ( 
     <Fragment>
       <GameContain>
         
@@ -27,6 +28,8 @@ const GameContainer = () => {
         <CoinSelect />
 
         <Results />
+
+        <StatusCard />
       </GameContain>
     </Fragment>
   );

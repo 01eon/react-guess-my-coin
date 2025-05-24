@@ -12,7 +12,7 @@ body {
 /* Laptop */
 @media (min-width: 64em) {
   body {
-    margin: 4rem 25rem;
+    margin: 1rem 25rem;
   }
 }
 

@@ -18,7 +18,7 @@ export const GameHeader = styled.div`
  display: flex;
  flex-direction: column;
  align-items: center;
- margin-bottom: 1.8rem;
+ margin-bottom: 0.2rem;
 `
 
 export const GameTitle = styled.h2`
