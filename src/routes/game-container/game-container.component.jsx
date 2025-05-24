@@ -7,6 +7,7 @@ import {
 } from "./game-container.style";
 import CoinDisplay from "../../components/coin-display/coin-display.component";
 import StreakIndicator from "../../components/streak-indicator/streak-indicator.component";
+import CoinSelect from "../../components/coin-select/coin-select.component";
 
 const GameContainer = () => {
   return (
@@ -18,6 +19,7 @@ const GameContainer = () => {
         </GameHeader>
         <CoinDisplay />
         <StreakIndicator/>
+        <CoinSelect />
         
       </GameContain>
     </Fragment>
