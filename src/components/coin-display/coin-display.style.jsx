@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 export const CoinDisp = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2.8rem 0;
+  margin: 1rem 0;
 `;
 const flip = keyframes`
     0% { transform: rotateY(0); }

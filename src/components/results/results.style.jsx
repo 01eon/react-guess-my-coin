@@ -7,7 +7,7 @@ export const ResultsBase = styled.div`
   font-weight: 600;
   font-size: 1.1rem;
   opacity: 0;
-  margin: 1rem 0;
+  margin-top: 1rem;
   transform: translateY(10px);
   transition: all 0.3s ease;
   width: 50%;

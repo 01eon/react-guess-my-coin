@@ -21,12 +21,11 @@ export const GameProvider = ({ children }) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const maxStreak = 5;
 
-
   const makeGuess = (guess, callback) => {
     // Guard Clause
     if (isFlipping) return;
 
-    console.log('makeGuess CALLED with:', guess)
+    console.log("makeGuess CALLED with:", guess);
 
     // Coin Flip in Progress
     setIsFlipping(true);
@@ -34,17 +33,18 @@ export const GameProvider = ({ children }) => {
       const outcome = getRandomOutcome();
       const isCorrect = guess === outcome;
 
-      console.log('Flipped Outcome:', outcome);
+      console.log("Flipped Outcome:", outcome);
 
       setTotal((prev) => prev + 1);
       setCorrect((prev) => (isCorrect ? prev + 1 : prev));
       setCurrentStreak((prev) => (isCorrect ? prev + 1 : 0));
       setResult({ outcome, correct: isCorrect });
+
       setIsFlipping(false);
+
       callback?.(outcome);
     }, 600);
   };
-
 
   const resetGame = () => {
     setCorrect(0);
