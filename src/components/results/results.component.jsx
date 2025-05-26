@@ -14,15 +14,15 @@ const Results = () => {
     <>
       {total !== 5 ? (
         correct >= 1 ? (
-          <ResultsCorrect as={ResultsShow}>🎉 You got it right!</ResultsCorrect>
+          <ResultsCorrect as={ResultsShow}>⭐ You got it right!</ResultsCorrect>
         ) : (
           <ResultsWrong as={ResultsShow}>💀 Too bad.</ResultsWrong>
         )
       ) : correct >= 3 ? (
-        <ResultsCorrect as={ResultsShow}>Woah! You aced it.</ResultsCorrect>
+        <ResultsCorrect as={ResultsShow}>🎉 Woah! You made it.</ResultsCorrect>
       ) : (
         <ResultsWrong as={ResultsShow}>
-          What the?! How can you fail this?
+          😭 What the?! How can you fail this?
         </ResultsWrong>
       )}
     </>
