@@ -40,6 +40,7 @@ export const GameProvider = ({ children }) => {
       setCurrentStreak((prev) => (isCorrect ? prev + 1 : 0));
       setResult({ outcome, correct: isCorrect });
 
+      // Flip end
       setIsFlipping(false);
 
       callback?.(outcome);

@@ -15,6 +15,19 @@ const ButtonBase = styled.button`
   &:active {
     transform: translateY(0);
   }
+
+  &:disabled {
+    background: linear-gradient(135deg, #a8b5f2, #a388bf);
+    color: white;
+    cursor: not-allowed;
+    transform: translateY(0px);
+  }
+
+  &:hover:disabled {
+    transform: translateY(0px);
+  box-shadow: none;
+
+  }
 `;
 
 export const ButtonPrimary = styled(ButtonBase)`

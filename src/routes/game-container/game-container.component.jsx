@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState} from "react";
+import { Fragment, useContext, useState } from "react";
 import {
   GameContain,
   GameDesc,
@@ -28,7 +28,7 @@ import { ButtonSecondary } from "../../components/button/button.styled";
 import { GameContext } from "../../context/game.context";
 
 const GameContainer = () => {
-  const { isFlipping, makeGuess, resetGame } = useContext(GameContext);
+  const { isFlipping, total, makeGuess, resetGame } = useContext(GameContext);
 
   const [coinSide, setCoinSide] = useState("?");
   const [coinFlip, setCoinFlip] = useState("");
@@ -43,7 +43,6 @@ const GameContainer = () => {
     });
   };
 
-  
 
   return (
     <Fragment>
@@ -66,7 +65,7 @@ const GameContainer = () => {
             onClick={() => {
               handleGuess("heads");
             }}
-            disabled={isFlipping}
+            disabled={isFlipping || total === 5}
           >
             <span> ⭐ Heads</span>
           </ButtonPrimary>
@@ -74,7 +73,7 @@ const GameContainer = () => {
             onClick={() => {
               handleGuess("tails");
             }}
-            disabled={isFlipping}
+            disabled={isFlipping || total === 5}
           >
             <span> ⚖️ Tails</span>
           </ButtonPrimary>
