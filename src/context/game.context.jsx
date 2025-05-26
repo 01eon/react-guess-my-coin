@@ -9,13 +9,11 @@ export const GameContext = createContext({
   isFlipping: null,
   makeGuess: () => {},
   resetGame: () => {},
-  initGuess: () => {},
 });
 
 const getRandomOutcome = () => (Math.random() < 0.5 ? "heads" : "tails");
 
 export const GameProvider = ({ children }) => {
-  const [coinSide, setCoinSide] = useState("?");
   const [correct, setCorrect] = useState(0);
   const [total, setTotal] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
@@ -23,20 +21,20 @@ export const GameProvider = ({ children }) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const maxStreak = 5;
 
-  const initGuess = () => {
-    setCoinSide("?");
-    console.log('Game Initialized')
-  }
 
   const makeGuess = (guess, callback) => {
     // Guard Clause
     if (isFlipping) return;
+
+    console.log('makeGuess CALLED with:', guess)
 
     // Coin Flip in Progress
     setIsFlipping(true);
     setTimeout(() => {
       const outcome = getRandomOutcome();
       const isCorrect = guess === outcome;
+
+      console.log('Flipped Outcome:', outcome);
 
       setTotal((prev) => prev + 1);
       setCorrect((prev) => (isCorrect ? prev + 1 : prev));
@@ -64,7 +62,6 @@ export const GameProvider = ({ children }) => {
     isFlipping,
     makeGuess,
     resetGame,
-    initGuess,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

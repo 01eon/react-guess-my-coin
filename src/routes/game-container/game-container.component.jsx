@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useState} from "react";
 import {
   GameContain,
   GameDesc,
@@ -22,30 +22,28 @@ import StreakIndicator from "../../components/streak-indicator/streak-indicator.
 
 import StatusCard from "../../components/status-card/status-card.component";
 
-import { ResultsCorrect } from "../../components/results/results.style"
+import Results from "../../components/results/results.component"
 
 import { ButtonSecondary } from "../../components/button/button.styled";
 import { GameContext } from "../../context/game.context";
 
 const GameContainer = () => {
-  const { isFlipping, result, initGuess, makeGuess, resetGame } =
-    useContext(GameContext);
+  const { isFlipping, makeGuess, resetGame } = useContext(GameContext);
 
   const [coinSide, setCoinSide] = useState("?");
   const [coinFlip, setCoinFlip] = useState("");
 
-  // initGuess();
-
   const handleGuess = (guess) => {
     setCoinSide("?");
     setCoinFlip("flipping");
-    
+
     makeGuess(guess, (outcome) => {
       setCoinSide(outcome === "heads" ? "H" : "T");
       setCoinFlip("");
     });
   };
 
+  
 
   return (
     <Fragment>
@@ -82,10 +80,11 @@ const GameContainer = () => {
           </ButtonPrimary>
         </SelectContainer>
 
+        <Results />
 
         <StatusCard />
 
-        <ButtonSecondary id="btnReset">🔄 Reset Game</ButtonSecondary>
+        <ButtonSecondary onClick={resetGame}>🔄 Reset Game</ButtonSecondary>
       </GameContain>
     </Fragment>
   );
