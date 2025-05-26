@@ -10,7 +10,7 @@ export const ResultsBase = styled.div`
   margin-top: 1rem;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  width: 50%;
+  width: 70%;
 `;
 
 export const ResultsShow = styled(ResultsBase)`

@@ -11,7 +11,7 @@ export const GameContext = createContext({
   resetGame: () => {},
 });
 
-const getRandomOutcome = () => (Math.random() < 0.5 ? "heads" : "tails");
+const getRandomOutcome = () => (Math.random() < 0.7 ? "heads" : "tails");
 
 export const GameProvider = ({ children }) => {
   const [correct, setCorrect] = useState(0);

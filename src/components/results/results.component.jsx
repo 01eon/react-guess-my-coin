@@ -1,24 +1,32 @@
-import { ResultsBase, ResultsCorrect, ResultsShow, ResultsWrong } from "./results.style";
-import { useContext, useEffect } from "react";
+import {
+  ResultsBase,
+  ResultsCorrect,
+  ResultsShow,
+  ResultsWrong,
+} from "./results.style";
+import { useContext } from "react";
 import { GameContext } from "../../context/game.context";
 
 const Results = () => {
-  const { result } = useContext(GameContext);
-
-  useEffect(() => {
-    if (result) {
-      console.log("Updated Result", result);
-    }
-  }, [result]);
-
-  if (!result) return null;
+  const { correct, total } = useContext(GameContext);
+  if (total === 0) return null;
   return (
     <>
-      {result && result.correct ? <ResultsCorrect as={ResultsShow}>🎉 You got it right!</ResultsCorrect> : <ResultsWrong as={ResultsShow}>💀 Too bad.</ResultsWrong>}
+      {total !== 5 ? (
+        correct >= 1 ? (
+          <ResultsCorrect as={ResultsShow}>🎉 You got it right!</ResultsCorrect>
+        ) : (
+          <ResultsWrong as={ResultsShow}>💀 Too bad.</ResultsWrong>
+        )
+      ) : correct >= 3 ? (
+        <ResultsCorrect as={ResultsShow}>Woah! You aced it.</ResultsCorrect>
+      ) : (
+        <ResultsWrong as={ResultsShow}>
+          What the?! How can you fail this?
+        </ResultsWrong>
+      )}
     </>
-  )
-      // {result && result.correct ? <ResultsCorrect as={ResultsShow}>aaa</ResultsCorrect> : <ResultsWrong as={ResultsShow}>ssss</ResultsWrong>}
-  
+  );
 };
 
 export default Results;
