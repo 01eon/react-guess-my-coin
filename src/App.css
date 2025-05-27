@@ -12,13 +12,18 @@ body {
   align-items: center;
 }
 
-/* Laptop */
-@media (min-width: 64em) {
+/* Standard Phone */
+@media (min-width: 360px){
   body {
-    margin: 0rem 25rem;
+    margin: 0rem;
+    align-items: flex-start;
+    margin-top: 2.1rem;
   }
 }
 
-@theme {
-  /* .. */
-}
+/* @media (min-width: 780px){
+  body {
+    align-items: center;
+    margin-top: 0;
+  }
+} */

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../media-query/media-query.styled";
 
 const ButtonBase = styled.button`
   width: 15rem;
@@ -25,9 +26,14 @@ const ButtonBase = styled.button`
 
   &:hover:disabled {
     transform: translateY(0px);
-  box-shadow: none;
-
+    box-shadow: none;
   }
+
+  ${media.standardPhone`
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem;
+    width: 8rem;
+    `}
 `;
 
 export const ButtonPrimary = styled(ButtonBase)`
@@ -50,4 +56,8 @@ export const ButtonSecondary = styled(ButtonBase)`
     background: #e5e7eb;
     transform: translateY(-1px);
   }
+
+  ${media.standardPhone`
+    width: 12rem;
+    `}
 `;

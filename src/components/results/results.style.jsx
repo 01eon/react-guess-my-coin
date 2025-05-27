@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../media-query/media-query.styled";
 
 export const ResultsBase = styled.div`
   text-align: center;
@@ -11,6 +12,13 @@ export const ResultsBase = styled.div`
   transform: translateY(10px);
   transition: all 0.3s ease;
   width: 70%;
+
+  ${media.standardPhone`
+      width: 60%;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      padding: 20px 10px;
+    `}
 `;
 
 export const ResultsShow = styled(ResultsBase)`
@@ -20,9 +28,6 @@ export const ResultsShow = styled(ResultsBase)`
 
 export const ResultsCorrect = styled(ResultsBase)`
   background: linear-gradient(135deg, #67c9b2, #5fb77a);
-
-
-
   color: white;
 `;
 

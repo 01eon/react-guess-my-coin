@@ -15,16 +15,16 @@ export const GameContain = styled.div`
   justify-content: center;
 
   ${media.standardPhone`
-    padding: 0rem;
+    padding: 0.5rem;
     `}
 `;
 
 export const GameHeader = styled.div`
- display: flex;
- flex-direction: column;
- align-items: center;
- margin-bottom: 0.2rem;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.2rem;
+`;
 
 export const GameTitle = styled.h2`
   text-transform: capitalize;
@@ -34,7 +34,11 @@ export const GameTitle = styled.h2`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.02em;
-  margin-bottom: 0.8rem
+  margin-bottom: 0.8rem;
+
+   ${media.standardPhone`
+    font-size: 2rem;
+    `};
 `;
 
 export const GameDesc = styled.span`

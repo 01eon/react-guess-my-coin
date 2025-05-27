@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import { media } from "../media-query/media-query.styled";
 
 export const StatusContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin: 30px 0;
+
+  ${media.standardPhone`
+    margin: 10px 0;
+    `}
 `;
 
 export const StatusCardContainer = styled.div`
@@ -19,6 +24,9 @@ export const StatusCardContainer = styled.div`
     background: #f1f5f9;
     transform: translateY(-2px);
   }
+  ${media.standardPhone`
+    padding: 7px;
+    `}
 `;
 
 export const StatusNumber = styled.div`
@@ -26,6 +34,10 @@ export const StatusNumber = styled.div`
   font-weight: 800;
   color: #1f2937;
   margin-bottom: 4px;
+
+  ${media.standardPhone`
+    font-size: 1.5rem;
+    `}
 `;
 
 export const StatusLabel = styled.div`
@@ -34,4 +46,8 @@ export const StatusLabel = styled.div`
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+
+  ${media.standardPhone`
+      font-size: 0.7rem;
+    `}
 `;
