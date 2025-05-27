@@ -34,6 +34,12 @@ const ButtonBase = styled.button`
     padding: 0.7rem 1rem;
     width: 8rem;
     `}
+
+  ${media.hdPhone`
+      font-size: 1.3rem;
+      padding: 1rem 1.5rem;
+      width: 15rem;
+      `}
 `;
 
 export const ButtonPrimary = styled(ButtonBase)`
@@ -59,5 +65,9 @@ export const ButtonSecondary = styled(ButtonBase)`
 
   ${media.standardPhone`
     width: 12rem;
+    `}
+
+  ${media.hdPhone`
+      width: 15rem;
     `}
 `;

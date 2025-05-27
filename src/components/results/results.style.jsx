@@ -19,6 +19,13 @@ export const ResultsBase = styled.div`
       margin-top: 0.5rem;
       padding: 20px 10px;
     `}
+
+    ${media.hdPhone`
+      width: 70%;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      padding: 20px;
+      `}
 `;
 
 export const ResultsShow = styled(ResultsBase)`

@@ -26,7 +26,7 @@ export const GameProvider = ({ children }) => {
     if (isFlipping) return;
 
     console.log("makeGuess CALLED with:", guess);
-
+ 
     // Coin Flip in Progress
     setIsFlipping(true);
     setTimeout(() => {

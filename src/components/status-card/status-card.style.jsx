@@ -10,6 +10,10 @@ export const StatusContainer = styled.div`
   ${media.standardPhone`
     margin: 10px 0;
     `}
+
+  // ${media.hdPhone`
+  //     margin: 30px 0;
+  //     `}
 `;
 
 export const StatusCardContainer = styled.div`
@@ -27,6 +31,10 @@ export const StatusCardContainer = styled.div`
   ${media.standardPhone`
     padding: 7px;
     `}
+
+  ${media.hdPhone`
+      padding: 20px;
+      `}
 `;
 
 export const StatusNumber = styled.div`
@@ -37,6 +45,10 @@ export const StatusNumber = styled.div`
 
   ${media.standardPhone`
     font-size: 1.5rem;
+    `}
+
+  ${media.hdPhone`
+    font-size: 1.8rem;
     `}
 `;
 
@@ -50,4 +62,8 @@ export const StatusLabel = styled.div`
   ${media.standardPhone`
       font-size: 0.7rem;
     `}
+
+  ${media.hdPhone`
+      font-size: 0.9rem;
+      `}
 `;

@@ -17,6 +17,10 @@ export const GameContain = styled.div`
   ${media.standardPhone`
     padding: 0.5rem;
     `}
+
+  ${media.hdPhone`
+    padding: 1.5rem;
+    `}
 `;
 
 export const GameHeader = styled.div`
@@ -36,9 +40,13 @@ export const GameTitle = styled.h2`
   letter-spacing: -0.02em;
   margin-bottom: 0.8rem;
 
-   ${media.standardPhone`
+  ${media.standardPhone`
     font-size: 2rem;
     `};
+
+  ${media.hdPhone`
+      font-size: 2.5rem;
+      `}
 `;
 
 export const GameDesc = styled.span`

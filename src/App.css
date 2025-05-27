@@ -21,9 +21,12 @@ body {
   }
 }
 
-/* @media (min-width: 780px){
+/* Tablet */
+@media (min-width: 780px){
   body {
     align-items: center;
     margin-top: 0;
   }
-} */
+}
+
+
