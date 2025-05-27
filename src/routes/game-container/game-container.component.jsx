@@ -51,7 +51,7 @@ const GameContainer = () => {
           <GameTitle>Guess My Coin</GameTitle>
           <GameDesc>Test your luck and intuition!</GameDesc>
         </GameHeader>
-
+ 
         <CoinDisp>
           <Coin className={`${coinFlip}`} id="coin">
             {coinSide}

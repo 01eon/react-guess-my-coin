@@ -8,12 +8,12 @@ import { useContext } from "react";
 import { GameContext } from "../../context/game.context";
 
 const Results = () => {
-  const { correct, total } = useContext(GameContext);
+  const { correct, result, total } = useContext(GameContext);
   if (total === 0) return null;
   return (
     <>
       {total !== 5 ? (
-        correct >= 1 ? (
+        result.correct >= 1 ? (
           <ResultsCorrect as={ResultsShow}>⭐ You got it right!</ResultsCorrect>
         ) : (
           <ResultsWrong as={ResultsShow}>💀 Too bad.</ResultsWrong>
