@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import CoinHeads from "../../assets/coin-heads.png";
-import CoinTails from "../../assets/coin-tails.png";
+import { media } from "../../components/media-query/media-query.styled";
+
 export const GameContain = styled.div`
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
@@ -13,6 +13,10 @@ export const GameContain = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  ${media.standardPhone`
+    padding: 0rem;
+    `}
 `;
 
 export const GameHeader = styled.div`
