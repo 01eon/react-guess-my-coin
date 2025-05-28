@@ -38,6 +38,7 @@ export const ResultsCorrect = styled(ResultsBase)`
   color: white;
 `;
 
+
 export const ResultsWrong = styled(ResultsBase)`
   background: linear-gradient(135deg, #f76060, #f87171);
 

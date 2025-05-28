@@ -38,7 +38,7 @@ export const GameTitle = styled.h2`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.02em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0rem;
 
   ${media.standardPhone`
     font-size: 2rem;
@@ -47,6 +47,16 @@ export const GameTitle = styled.h2`
   ${media.hdPhone`
       font-size: 2.5rem;
       `}
+`;
+
+export const GameMode = styled.span`
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
 `;
 
 export const GameDesc = styled.span`

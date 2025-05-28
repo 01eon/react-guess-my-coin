@@ -13,8 +13,6 @@ export const GameContext = createContext({
   resetGame: () => {},
 });
 
-const getRandomOutcome = () => (Math.random() < 0.5 ? "heads" : "tails");
-
 export const GameProvider = ({ children }) => {
   const [correct, setCorrect] = useState(0);
   const [total, setTotal] = useState(0);
@@ -25,6 +23,8 @@ export const GameProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(true);
   const maxStreak = 5;
 
+  const getRandomOutcome = () => (Math.random() < 0.5 ? "heads" : "tails");
+  
   useEffect(() => {
     if (mode) {
       console.log("----- Checking Game Mode:", mode);
@@ -36,18 +36,8 @@ export const GameProvider = ({ children }) => {
     setShowModal(false);
   };
 
-  const modeScore = () => correct >= 3;
-  const modeStreak = () => currentStreak >= 3;
-
-  // const checkWin = () => {
-  //   if (mode === "score") return modeScore();
-  //   if (mode === "streak") return modeStreak();
-  //   return false;
-  // };
-
-  // const didWin = checkWin();
-
-  // if (didWin) return console.log('Player won the game in', mode)
+  const modeScore = correct >= 3;
+  const modeStreak = currentStreak >= 3;
 
   const makeGuess = (guess, callback) => {
     // Guard Clause
@@ -93,6 +83,8 @@ export const GameProvider = ({ children }) => {
     isFlipping,
     mode,
     showModal,
+    modeScore,
+    modeStreak,
     setModeState,
     setMode,
     makeGuess,
