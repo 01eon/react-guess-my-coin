@@ -7,7 +7,7 @@ export const CoinDisp = styled.div`
   margin: 1rem 0;
 `;
 const flip = keyframes`
-    0% { transform: rotateY(0); }
+    0% { transform: rotateY(0); }a
     50% { transform: rotateY(90deg) scale(1.1); }
     100% { transform: rotateY(180deg); }
 `;

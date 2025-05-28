@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const GameContext = createContext({
   correct: 0,
@@ -7,6 +7,8 @@ export const GameContext = createContext({
   maxStreak: 5,
   result: null,
   isFlipping: null,
+  mode: "",
+  showModal: true,
   makeGuess: () => {},
   resetGame: () => {},
 });
@@ -19,14 +21,40 @@ export const GameProvider = ({ children }) => {
   const [currentStreak, setCurrentStreak] = useState(0);
   const [result, setResult] = useState(null);
   const [isFlipping, setIsFlipping] = useState(false);
+  const [mode, setModeState] = useState("");
+  const [showModal, setShowModal] = useState(true);
   const maxStreak = 5;
+
+  useEffect(() => {
+    if (mode) {
+      console.log("----- Checking Game Mode:", mode);
+    }
+  }, [mode]);
+
+  const setMode = (select) => {
+    setModeState(select);
+    setShowModal(false);
+  };
+
+  const modeScore = () => correct >= 3;
+  const modeStreak = () => currentStreak >= 3;
+
+  // const checkWin = () => {
+  //   if (mode === "score") return modeScore();
+  //   if (mode === "streak") return modeStreak();
+  //   return false;
+  // };
+
+  // const didWin = checkWin();
+
+  // if (didWin) return console.log('Player won the game in', mode)
 
   const makeGuess = (guess, callback) => {
     // Guard Clause
     if (isFlipping) return;
 
     console.log("makeGuess CALLED with:", guess);
- 
+
     // Coin Flip in Progress
     setIsFlipping(true);
     setTimeout(() => {
@@ -52,6 +80,8 @@ export const GameProvider = ({ children }) => {
     setTotal(0);
     setCurrentStreak(0);
     setResult(null);
+    setModeState(null);
+    setShowModal(true);
   };
 
   const value = {
@@ -61,6 +91,10 @@ export const GameProvider = ({ children }) => {
     maxStreak,
     result,
     isFlipping,
+    mode,
+    showModal,
+    setModeState,
+    setMode,
     makeGuess,
     resetGame,
   };

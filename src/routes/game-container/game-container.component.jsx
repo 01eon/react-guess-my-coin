@@ -22,13 +22,15 @@ import StreakIndicator from "../../components/streak-indicator/streak-indicator.
 
 import StatusCard from "../../components/status-card/status-card.component";
 
-import Results from "../../components/results/results.component"
+import Results from "../../components/results/results.component";
 
 import { ButtonSecondary } from "../../components/button/button.styled";
 import { GameContext } from "../../context/game.context";
+import ModeModal from "../../components/mode-modal/mode-modal.component";
 
 const GameContainer = () => {
-  const { isFlipping, total, makeGuess, resetGame } = useContext(GameContext);
+  const { isFlipping, total, showModal, makeGuess, resetGame } =
+    useContext(GameContext);
 
   const [coinSide, setCoinSide] = useState("?");
   const [coinFlip, setCoinFlip] = useState("");
@@ -43,15 +45,16 @@ const GameContainer = () => {
     });
   };
 
-
   return (
     <Fragment>
+      {showModal && <ModeModal /> }
+
       <GameContain>
         <GameHeader>
           <GameTitle>Guess My Coin</GameTitle>
           <GameDesc>Test your luck and intuition!</GameDesc>
         </GameHeader>
- 
+
         <CoinDisp>
           <Coin className={`${coinFlip}`} id="coin">
             {coinSide}
@@ -83,7 +86,17 @@ const GameContainer = () => {
 
         <StatusCard />
 
-        <ButtonSecondary onClick={resetGame}>🔄 Reset Game</ButtonSecondary>
+        {total === 0 || total === 5 ? (
+          <ButtonSecondary>👆 Select Mode</ButtonSecondary>
+        ) : null}
+
+        {total === 0 ? null : total !== 0 || total !== 5 ? (
+          <ButtonSecondary onClick={resetGame}> 🔄 Reset Game</ButtonSecondary>
+        ) : total === 5 ? (
+          <ButtonSecondary onClick={resetGame}> 🔄 New Game</ButtonSecondary>
+        ) : null}
+
+        {/* <ButtonSecondary onClick={resetGame}> {total === 0 ? "🔄 Reset Game" : total === 5 ? "🔄 New Game" : null}</ButtonSecondary> */}
       </GameContain>
     </Fragment>
   );
