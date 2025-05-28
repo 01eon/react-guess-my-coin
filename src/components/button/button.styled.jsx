@@ -71,3 +71,25 @@ export const ButtonSecondary = styled(ButtonBase)`
       width: 15rem;
     `}
 `;
+
+export const ButtonEasy = styled(ButtonBase)`
+  border: 3px dotted #9396cc;
+  &:hover {
+    border: 3px solid #9396cc;
+    background-color:rgb(190, 255, 206)
+  }
+`;
+
+export const ButtonMedium = styled(ButtonBase)`
+border: 3px dotted #9396cc;
+  &:hover {
+    border: 3px solid #9396cc;
+    background-color:rgb(255, 254, 190)
+  }`;
+
+export const ButtonHard = styled(ButtonBase)`
+border: 3px dotted #9396cc;
+  &:hover {
+    border: 3px solid #9396cc;
+    background-color:rgb(255, 181, 171)
+  }`;

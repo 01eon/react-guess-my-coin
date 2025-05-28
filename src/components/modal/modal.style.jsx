@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div`
-  z-index: 20;
+const ModalContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -12,6 +11,14 @@ export const ModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ModeContainer = styled(ModalContainer)`
+  z-index: 20;
+`;
+
+export const DiffContainer = styled(ModalContainer)`
+  z-index: 30;
 `;
 
 export const ModalContent = styled.div`
@@ -67,7 +74,7 @@ export const ScoreMode = styled(SelectMode)`
   &:hover {
     border: solid;
     cursor: pointer;
-    background-color: #FFF8B4;
+    background-color: #fff8b4;
   }
 `;
 
@@ -83,3 +90,9 @@ export const ModeIcon = styled.div`
 export const ModeDesc = styled.span`
   font-size: 1.2rem;
 `;
+
+export const DiffBtnContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+`

@@ -27,10 +27,10 @@ import Results from "../../components/results/results.component";
 
 import { ButtonSecondary } from "../../components/button/button.styled";
 import { GameContext } from "../../context/game.context";
-import ModeModal from "../../components/mode-modal/mode-modal.component";
+import ModalMode from "../../components/modal/modal-mode/modal-mode.component";
 
 const GameContainer = () => {
-  const { mode, isFlipping, total, showModal, makeGuess, resetGame } =
+  const { mode, diffLabel, isFlipping, total, showModal, makeGuess, resetGame } =
     useContext(GameContext);
 
   const [coinSide, setCoinSide] = useState("?");
@@ -46,14 +46,15 @@ const GameContainer = () => {
     });
   };
 
+
   return (
     <Fragment>
-      {showModal && <ModeModal />}
+      {showModal && <ModalMode />}
 
       <GameContain>
         <GameHeader>
           <GameTitle>Guess My Coin</GameTitle>
-          <GameMode>[ {mode} Mode ]</GameMode>
+          <GameMode>[ {mode} Mode: {diffLabel} ]</GameMode>
           <GameDesc>Test your luck and intuition!</GameDesc>
         </GameHeader>
 

@@ -21,20 +21,43 @@ export const GameProvider = ({ children }) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const [mode, setModeState] = useState("");
   const [showModal, setShowModal] = useState(true);
+  const [showModalDiff, setShowModalDiff] = useState(false);
+  const [diff, setDiffState] = useState(null);
+  const [diffLabel, setDiffLabel] = useState('')
   const maxStreak = 5;
 
-  const getRandomOutcome = () => (Math.random() < 0.5 ? "heads" : "tails");
-  
+  const difficulty = {
+    easy: 0.9,
+    medium: 0.8,
+    hard: 0.7,
+  };
+
+
+  const getRandomOutcome = () =>
+    (mode === "score" ? (Math.random() < diff ? "heads" : "tails") : null) ||
+    (mode === "streak" ? (Math.random() < diff ? "heads" : "tails") : null);
+
   useEffect(() => {
     if (mode) {
       console.log("----- Checking Game Mode:", mode);
     }
   }, [mode]);
 
+  
+
   const setMode = (select) => {
     setModeState(select);
-    setShowModal(false);
+    setShowModalDiff(true);
   };
+
+  const setDiff = (select) => {
+    setDiffState(difficulty[select])
+    setShowModal(false);
+    setShowModalDiff(false);
+    
+    const label = select.charAt(0).toUpperCase() + select.slice(1);
+    setDiffLabel(label);
+  }
 
   const modeScore = correct >= 3;
   const modeStreak = currentStreak >= 3;
@@ -72,6 +95,7 @@ export const GameProvider = ({ children }) => {
     setResult(null);
     setModeState(null);
     setShowModal(true);
+    setShowModalDiff(false);
   };
 
   const value = {
@@ -83,8 +107,13 @@ export const GameProvider = ({ children }) => {
     isFlipping,
     mode,
     showModal,
+    showModalDiff,
     modeScore,
     modeStreak,
+    diff,
+    diffLabel,
+    setDiff,
+    setShowModalDiff,
     setModeState,
     setMode,
     makeGuess,
