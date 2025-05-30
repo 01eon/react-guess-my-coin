@@ -98,6 +98,7 @@ export const GameProvider = ({ children }) => {
     setShowModalDiff(false);
   };
 
+
   const value = {
     correct,
     total,

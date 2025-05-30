@@ -31,7 +31,7 @@ import ModalMode from "../../components/modal/modal-mode/modal-mode.component";
 
 const GameContainer = () => {
   const { mode, diffLabel, isFlipping, total, showModal, makeGuess, resetGame } =
-    useContext(GameContext);
+    useContext(GameContext); 
 
   const [coinSide, setCoinSide] = useState("?");
   const [coinFlip, setCoinFlip] = useState("");
@@ -89,17 +89,12 @@ const GameContainer = () => {
 
         <StatusCard />
 
-        {/* {total === 0 || total === 5 ? (
-          <ButtonSecondary>👆 Select Mode</ButtonSecondary>
-        ) : null} */}
-
         {total === 0 ? (
-          <ButtonSecondary>👆 Select Mode</ButtonSecondary>
+          <ButtonSecondary onClick={resetGame}>👆 Select Mode</ButtonSecondary>
         ) : total !== 0 || total !== 5 ? (
-          <ButtonSecondary onClick={resetGame}> 🔄 Reset Game</ButtonSecondary>
+          <ButtonSecondary onClick={resetGame}> 🔄 New Game</ButtonSecondary>
         ) : null}
 
-        {/* <ButtonSecondary onClick={resetGame}> {total === 0 ? "🔄 Reset Game" : total === 5 ? "🔄 New Game" : null}</ButtonSecondary> */}
       </GameContain>
     </Fragment>
   );
