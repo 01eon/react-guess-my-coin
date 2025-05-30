@@ -78,6 +78,10 @@ export const ButtonEasy = styled(ButtonBase)`
     border: 3px solid #9396cc;
     background-color:rgb(190, 255, 206)
   }
+  
+  ${media.standardPhone`
+    width: 15rem;
+  `}
 `;
 
 export const ButtonMedium = styled(ButtonBase)`
@@ -85,11 +89,21 @@ border: 3px dotted #9396cc;
   &:hover {
     border: 3px solid #9396cc;
     background-color:rgb(255, 254, 190)
-  }`;
+  }
+  
+  ${media.standardPhone`
+    width: 15rem;
+  `}
+`;
 
 export const ButtonHard = styled(ButtonBase)`
 border: 3px dotted #9396cc;
   &:hover {
     border: 3px solid #9396cc;
     background-color:rgb(255, 181, 171)
-  }`;
+  }
+  
+  ${media.standardPhone`
+    width: 15rem;
+  `}
+`;

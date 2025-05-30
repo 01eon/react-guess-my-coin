@@ -13,24 +13,13 @@ const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${media.standardPhone`
-    align-items: flex-start;
-    padding-top: 0.3rem;
-  `}
-
-  ${media.hdPhone`
-    padding-top: 1.6rem;
-  `}
-
-  ${media.fhdPhone`
-    padding-top: 0;
-    align-items: center;
-  `}
+  
 
 `;
 
 export const ModeContainer = styled(ModalContainer)`
   z-index: 20;
+  
 `;
 
 export const DiffContainer = styled(ModalContainer)`
@@ -168,4 +157,12 @@ export const DiffBtnContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   padding-bottom: 1.5rem;
+
+  ${media.standardPhone`
+    flex-direction: column;  
+  `}
+
+  ${media.tablet`
+    flex-direction: row;
+    `}
 `;

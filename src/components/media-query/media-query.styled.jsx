@@ -16,4 +16,4 @@ export const media = Object.keys(resolution).reduce((acc, label) => {
         }
     `;
     return acc;
-}, {})
+}, {}) 
